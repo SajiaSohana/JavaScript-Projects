@@ -1,51 +1,42 @@
-// Variables to store time and control the stopwatch
-let hours = 0;
-let minutes = 0;
+let timer;
 let seconds = 0;
-let interval = null;
-let isRunning = false;
+let running = false;
 
-// Function to update the display
+const display = document.getElementById('display');
+const startButton = document.getElementById('start');
+const stopButton = document.getElementById('stop');
+const resetButton = document.getElementById('reset');
+
 function updateDisplay() {
-    const timeDisplay = document.getElementById("time");
-    const formattedTime = 
-        String(hours).padStart(2, '0') + ":" + 
-        String(minutes).padStart(2, '0') + ":" + 
-        String(seconds).padStart(2, '0');
-    timeDisplay.textContent = formattedTime;
+    const hrs = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    
+    display.textContent = 
+        `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
 }
 
-// Start the stopwatch
-document.getElementById("start-btn").addEventListener("click", function() {
-    if (!isRunning) {
-        interval = setInterval(() => {
-            seconds++;
-            if (seconds === 60) {
-                seconds = 0;
-                minutes++;
-                if (minutes === 60) {
-                    minutes = 0;
-                    hours++;
-                }
-            }
-            updateDisplay();
-        }, 1000);
-        isRunning = true;
-    }
-});
+function startTimer() {
+    if (running) return;
+    running = true;
+    timer = setInterval(() => {
+        seconds++;
+        updateDisplay();
+    }, 1000);
+}
 
-// Stop the stopwatch
-document.getElementById("stop-btn").addEventListener("click", function() {
-    clearInterval(interval);
-    isRunning = false;
-});
+function stopTimer() {
+    clearInterval(timer);
+    running = false;
+}
 
-// Reset the stopwatch
-document.getElementById("reset-btn").addEventListener("click", function() {
-    clearInterval(interval);
-    hours = 0;
-    minutes = 0;
+function resetTimer() {
+    clearInterval(timer);
+    running = false;
     seconds = 0;
-    isRunning = false;
     updateDisplay();
-});
+}
+
+startButton.addEventListener('click', startTimer);
+stopButton.addEventListener('click', stopTimer);
+resetButton.addEventListener('click', resetTimer);

@@ -1,47 +1,60 @@
-/* Global Styling */
 body {
-    background-color: #000; /* Black monochromatic background */
-    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Darker background for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* Stopwatch Container */
 .stopwatch-container {
-    background: rgba(255, 255, 255, 0.1); /* Glassmorphic background */
-    border-radius: 30px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 40px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     width: 100%;
-    max-width: 500px; /* Set max width for responsiveness */
 }
 
-/* Stopwatch Display */
-.stopwatch-display h1 {
-    color: #fff;
-    font-size: 4rem; /* Large size for the stopwatch display */
-    margin: 20px 0;
+.stopwatch {
+    background: #1e1e1e; /* Dark gray background for a sleek look */
+    border-radius: 15px;
+    padding: 30px 40px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 400px;
+    height: 250px; /* Adjusted height for proportion */
 }
 
-/* Buttons Styling */
+.time {
+    font-size: 3.5em;
+    color: #ffffff; /* White text for contrast */
+    margin-bottom: 20px;
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 button {
-    background-color: #4267B2; /* Facebook blue theme restored */
-    color: white;
+    background-color: #007bff; /* A professional blue */
     border: none;
-    padding: 15px 30px; /* Increased button size */
-    font-size: 1.2rem; /* Larger font size */
     border-radius: 8px;
+    color: #fff;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
+    font-size: 1em;
+    padding: 12px 20px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 button:hover {
-    transform: scale(1.05);
+    background-color: #0056b3; /* Slightly darker blue on hover */
 }
 
 button:active {
-    transform: scale(0.95);
+    background-color: #00408c; /* Even darker blue when pressed */
+    transform: scale(0.98); /* Subtle scale effect when pressed */
 }
