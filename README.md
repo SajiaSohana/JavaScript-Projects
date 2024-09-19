@@ -1,1 +1,2 @@
-# JavaScript-API-Projects
+# JavaScript-Projects
+
