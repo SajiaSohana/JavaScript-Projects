@@ -1,9 +1,5 @@
 /* Global Styling */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     background-color: #000; /* Black monochromatic background */
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -12,38 +8,34 @@ body {
 /* Stopwatch Container */
 .stopwatch-container {
     background: rgba(255, 255, 255, 0.1); /* Glassmorphic background */
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
     text-align: center;
-    width: 300px;
+    width: 100%;
+    max-width: 500px; /* Set max width for responsiveness */
 }
 
 /* Stopwatch Display */
 .stopwatch-display h1 {
     color: #fff;
-    font-size: 3rem;
+    font-size: 4rem; /* Large size for the stopwatch display */
     margin: 20px 0;
 }
 
 /* Buttons Styling */
-.buttons {
-    display: flex;
-    justify-content: space-around;
-}
-
 button {
     background-color: #4267B2; /* Facebook blue theme */
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
+    padding: 15px 30px; /* Increased button size */
+    font-size: 1.2rem; /* Larger font size */
+    border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
 button:hover {
